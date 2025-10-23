@@ -1,0 +1,267 @@
+{
+  "layer_correlations": [
+    {
+      "layer": 0,
+      "pearson_correlation": -0.18192297511786645,
+      "pearson_p_value": 6.39145263791313e-107,
+      "spearman_correlation": -0.12308309542090888,
+      "spearman_p_value": 1.6473119245637142e-49,
+      "cosine_similarity": -0.1819075047969818
+    },
+    {
+      "layer": 1,
+      "pearson_correlation": -0.20062801938445282,
+      "pearson_p_value": 4.3923156303053436e-130,
+      "spearman_correlation": -0.10951687791304929,
+      "spearman_p_value": 1.6745560008648946e-39,
+      "cosine_similarity": -0.20067277550697327
+    },
+    {
+      "layer": 2,
+      "pearson_correlation": -0.10064674955373443,
+      "pearson_p_value": 1.3410826562221085e-33,
+      "spearman_correlation": -0.09312348972274793,
+      "spearman_p_value": 5.511302512712315e-29,
+      "cosine_similarity": -0.10032618790864944
+    },
+    {
+      "layer": 3,
+      "pearson_correlation": -0.09165808414199167,
+      "pearson_p_value": 3.963855591912806e-28,
+      "spearman_correlation": -0.12187447915791334,
+      "spearman_p_value": 1.4340658583565125e-48,
+      "cosine_similarity": -0.09165924787521362
+    },
+    {
+      "layer": 4,
+      "pearson_correlation": -0.18996036957527887,
+      "pearson_p_value": 1.4128862406327443e-116,
+      "spearman_correlation": -0.11808301330536412,
+      "spearman_p_value": 1.104938067090539e-45,
+      "cosine_similarity": -0.19013434648513794
+    },
+    {
+      "layer": 5,
+      "pearson_correlation": -0.046614182770709715,
+      "pearson_p_value": 2.353109745840936e-08,
+      "spearman_correlation": -0.12221683745966665,
+      "spearman_p_value": 7.786106126925693e-49,
+      "cosine_similarity": -0.0465853251516819
+    },
+    {
+      "layer": 6,
+      "pearson_correlation": -0.23507880321303387,
+      "pearson_p_value": 3.225267880251942e-179,
+      "spearman_correlation": -0.10844400410507364,
+      "spearman_p_value": 9.220126606048928e-39,
+      "cosine_similarity": -0.23504701256752014
+    },
+    {
+      "layer": 7,
+      "pearson_correlation": -0.2272368501764549,
+      "pearson_p_value": 2.78641065990537e-167,
+      "spearman_correlation": -0.08288634048495438,
+      "spearman_p_value": 2.7749953578388703e-23,
+      "cosine_similarity": -0.22724609076976776
+    },
+    {
+      "layer": 8,
+      "pearson_correlation": -0.11564638902655369,
+      "pearson_p_value": 7.071366416763318e-44,
+      "spearman_correlation": -0.09542790199707543,
+      "spearman_p_value": 2.3240671129097078e-30,
+      "cosine_similarity": -0.11579500883817673
+    },
+    {
+      "layer": 9,
+      "pearson_correlation": -0.14694213259191968,
+      "pearson_p_value": 5.1531863553570036e-70,
+      "spearman_correlation": -0.05288678286353199,
+      "spearman_p_value": 2.355359217345143e-10,
+      "cosine_similarity": -0.1471889168024063
+    },
+    {
+      "layer": 10,
+      "pearson_correlation": -0.08305585292856384,
+      "pearson_p_value": 2.260634567607936e-23,
+      "spearman_correlation": -0.03439096780081626,
+      "spearman_p_value": 3.811907765566888e-05,
+      "cosine_similarity": -0.08285076916217804
+    },
+    {
+      "layer": 11,
+      "pearson_correlation": -0.032198270133780724,
+      "pearson_p_value": 0.00011532339856819007,
+      "spearman_correlation": -0.04947609129062628,
+      "spearman_p_value": 3.0845159932779833e-09,
+      "cosine_similarity": -0.032619599252939224
+    },
+    {
+      "layer": 12,
+      "pearson_correlation": -0.011478842112824659,
+      "pearson_p_value": 0.16934172348261875,
+      "spearman_correlation": -0.04170365795456609,
+      "spearman_p_value": 5.882261388013247e-07,
+      "cosine_similarity": -0.011385706253349781
+    },
+    {
+      "layer": 13,
+      "pearson_correlation": -0.08299467556639321,
+      "pearson_p_value": 2.4343499332267365e-23,
+      "spearman_correlation": -0.03467908429135302,
+      "spearman_p_value": 3.279738961486493e-05,
+      "cosine_similarity": -0.0830555111169815
+    },
+    {
+      "layer": 14,
+      "pearson_correlation": -0.04100147223245067,
+      "pearson_p_value": 9.067426975140364e-07,
+      "spearman_correlation": -0.0335128376313156,
+      "spearman_p_value": 5.985767973425571e-05,
+      "cosine_similarity": -0.041002336889505386
+    },
+    {
+      "layer": 15,
+      "pearson_correlation": 0.005770870969289812,
+      "pearson_p_value": 0.4896224744808842,
+      "spearman_correlation": 0.0020837650970732206,
+      "spearman_p_value": 0.8029941209667053,
+      "cosine_similarity": 0.005547948181629181
+    },
+    {
+      "layer": 16,
+      "pearson_correlation": 0.13501655923422815,
+      "pearson_p_value": 2.675170440031886e-59,
+      "spearman_correlation": -0.0215152572754543,
+      "spearman_p_value": 0.009990422346818854,
+      "cosine_similarity": 0.13477078080177307
+    },
+    {
+      "layer": 17,
+      "pearson_correlation": 0.05016170416948108,
+      "pearson_p_value": 1.8635781131424285e-09,
+      "spearman_correlation": -0.00022067123542313495,
+      "spearman_p_value": 0.978922873625622,
+      "cosine_similarity": 0.05011150613427162
+    },
+    {
+      "layer": 18,
+      "pearson_correlation": 0.08763749866478247,
+      "pearson_p_value": 7.572576995208554e-26,
+      "spearman_correlation": -0.009858991070852788,
+      "spearman_p_value": 0.2378520190932699,
+      "cosine_similarity": 0.08771122246980667
+    },
+    {
+      "layer": 19,
+      "pearson_correlation": -0.05720476396996927,
+      "pearson_p_value": 7.165466613782175e-12,
+      "spearman_correlation": -0.015456130551571698,
+      "spearman_p_value": 0.06423307972678863,
+      "cosine_similarity": -0.057777974754571915
+    },
+    {
+      "layer": 20,
+      "pearson_correlation": 0.18814079922563565,
+      "pearson_p_value": 2.3716341777060096e-114,
+      "spearman_correlation": -0.009920353503803608,
+      "spearman_p_value": 0.23494386045546958,
+      "cosine_similarity": 0.1880584955215454
+    },
+    {
+      "layer": 21,
+      "pearson_correlation": -0.050413003305222685,
+      "pearson_p_value": 1.5467324499331016e-09,
+      "spearman_correlation": -0.009148175875498005,
+      "spearman_p_value": 0.2733999951834554,
+      "cosine_similarity": -0.05000177025794983
+    },
+    {
+      "layer": 22,
+      "pearson_correlation": 0.2824823028067884,
+      "pearson_p_value": 3.380829681288271e-261,
+      "spearman_correlation": 0.004952873656250363,
+      "spearman_p_value": 0.5531981987287575,
+      "cosine_similarity": 0.2822466492652893
+    },
+    {
+      "layer": 23,
+      "pearson_correlation": 0.009159001884804997,
+      "pearson_p_value": 0.27283269634556884,
+      "spearman_correlation": 0.01395630434105721,
+      "spearman_p_value": 0.09472832272421881,
+      "cosine_similarity": 0.00948818027973175
+    },
+    {
+      "layer": 24,
+      "pearson_correlation": 0.04982762555398413,
+      "pearson_p_value": 2.3841902882400203e-09,
+      "spearman_correlation": -0.011013445207564764,
+      "spearman_p_value": 0.18730346286037794,
+      "cosine_similarity": 0.04961078241467476
+    },
+    {
+      "layer": 25,
+      "pearson_correlation": -0.028626574915780998,
+      "pearson_p_value": 0.0006081567358508584,
+      "spearman_correlation": -0.008956038870506073,
+      "spearman_p_value": 0.28360249246697455,
+      "cosine_similarity": -0.028125859797000885
+    },
+    {
+      "layer": 26,
+      "pearson_correlation": 0.017136483407147664,
+      "pearson_p_value": 0.04019154125462932,
+      "spearman_correlation": -0.0018949185592994089,
+      "spearman_p_value": 0.8205288950218994,
+      "cosine_similarity": 0.01749773882329464
+    },
+    {
+      "layer": 27,
+      "pearson_correlation": 0.7099099579089644,
+      "pearson_p_value": 0.0,
+      "spearman_correlation": -0.0036423192347072994,
+      "spearman_p_value": 0.6627864063320535,
+      "cosine_similarity": 0.7098705768585205
+    },
+    {
+      "layer": 28,
+      "pearson_correlation": 0.00227819380496565,
+      "pearson_p_value": 0.7850441433597489,
+      "spearman_correlation": -0.006166487139539809,
+      "spearman_p_value": 0.46034743573670556,
+      "cosine_similarity": 0.003369523212313652
+    },
+    {
+      "layer": 29,
+      "pearson_correlation": -0.004532908424071552,
+      "pearson_p_value": 0.5873402636078271,
+      "spearman_correlation": -0.007936628570039255,
+      "spearman_p_value": 0.34200619845393154,
+      "cosine_similarity": -0.00445538479834795
+    },
+    {
+      "layer": 30,
+      "pearson_correlation": 0.6012364477615922,
+      "pearson_p_value": 0.0,
+      "spearman_correlation": 0.0034046231910350535,
+      "spearman_p_value": 0.6835589139968401,
+      "cosine_similarity": 0.6011806726455688
+    },
+    {
+      "layer": 31,
+      "pearson_correlation": 0.19713833913762985,
+      "pearson_p_value": 1.4084784119271537e-125,
+      "spearman_correlation": 0.05456557549409525,
+      "spearman_p_value": 6.251264171309856e-11,
+      "cosine_similarity": 0.19691447913646698
+    }
+  ],
+  "aggregated_correlations": {
+    "global_pearson": 0.04440939965330738,
+    "global_pearson_p": 5.840800260612589e-199,
+    "global_spearman": -0.05099141190901206,
+    "global_spearman_p": 1.0262174925010547e-261,
+    "global_cosine_similarity": 0.04437450536404586
+  }
+}

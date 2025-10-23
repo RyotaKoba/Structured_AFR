@@ -1,0 +1,6 @@
+*.sif
+pruned_model/
+llm_weights/
+data_local/
+weight_scores/
+
