@@ -18,4 +18,4 @@ CUDA_LAUNCH_BLOCKING=1 python main.py \
 --local_metrics three_w_one_wa \
 --save_model "./pruned_model/trash" \
 # --protect_sw
-# --pruning_ration : 枝刈り率
+# --pruning_ration : 枝刈り率a
