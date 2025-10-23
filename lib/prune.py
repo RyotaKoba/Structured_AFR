@@ -1204,29 +1204,87 @@ def Structured_AFR(args, model, tokenizer, device):
     
     def calculate_neuron_score_v2(W_metric):
         """
-        方法2: Signal-to-Noise比的なアプローチ
-        平均の絶対値 / (標準偏差 + epsilon)
+        Neuron score aggregation methods
+
+        Current best: Simple mean + abs (baseline)
+        Various alternative aggregation methods are provided below.
+        Comment/uncomment to switch between methods.
         """
 
-        """トリム平均を使用してニューロンスコアを計算"""
-        # 上位5%と下位5%を除外する設定
-        trim_percent = 2
-        
-        # 各列をソートして上位・下位を除外
-        sorted_W, _ = torch.sort(W_metric, dim=0)
-        n_rows = W_metric.shape[0]  # 4096
-        
-        # 除外する要素数を計算
-        trim_count = int(n_rows * trim_percent / 100)
-        
-        # 中央部分を抽出して平均を計算
-        trimmed_W = sorted_W[trim_count:-trim_count, :]
-        # trimmed_W = sorted_W[trim_count:, :]
-        mean_scores = trimmed_W.mean(axis=0)
-        std_scores = trimmed_W.std(axis=0)
-        snr_scores = torch.abs(mean_scores) / (std_scores + 1e-8)
-        return snr_scores
-        # return mean_scores
+        # ============================================================
+        # Method 0: Simple mean + abs (BASELINE - currently best)
+        # ============================================================
+        mean_scores = W_metric.mean(axis=0)
+        return torch.abs(mean_scores)
+
+        # ============================================================
+        # Method 1: Mean + Variance (combines magnitude and spread)
+        # ============================================================
+        # alpha = 0.1  # variance weight (tune this)
+        # mean_scores = W_metric.mean(axis=0)
+        # var_scores = W_metric.var(axis=0)
+        # return torch.abs(mean_scores) + alpha * var_scores
+
+        # ============================================================
+        # Method 2: Mean + Skewness (considers distribution asymmetry)
+        # ============================================================
+        # beta = 0.1  # skewness weight (tune this)
+        # mean_scores = W_metric.mean(axis=0)
+        # skew = ((W_metric - mean_scores) ** 3).mean(axis=0)
+        # return torch.abs(mean_scores) * (1 + beta * torch.abs(skew))
+
+        # ============================================================
+        # Method 3: Median + Percentile Range (robust to outliers)
+        # ============================================================
+        # gamma = 0.1  # range weight (tune this)
+        # median_scores = W_metric.median(axis=0).values
+        # p90 = torch.quantile(W_metric, 0.9, dim=0)
+        # p10 = torch.quantile(W_metric, 0.1, dim=0)
+        # range_scores = p90 - p10
+        # return torch.abs(median_scores) + gamma * range_scores
+
+        # ============================================================
+        # Method 4: Positive-Negative Conflict Score (MOST INTERESTING)
+        # Measures both net strength and pos-neg antagonism
+        # ============================================================
+        # delta = 0.5  # conflict weight (tune this)
+        # # Separate positive and negative weights
+        # pos_weights = torch.clamp(W_metric, min=0)
+        # neg_weights = torch.clamp(W_metric, max=0)
+        #
+        # # Average of positive and negative parts
+        # pos_mean = pos_weights.mean(axis=0)
+        # neg_mean = neg_weights.mean(axis=0)
+        #
+        # # Net strength: overall directional bias
+        # net_strength = torch.abs(pos_mean + neg_mean)
+        # # Conflict score: how much pos and neg weights oppose each other
+        # conflict_score = torch.abs(pos_mean) * torch.abs(neg_mean)
+        #
+        # return net_strength + delta * conflict_score
+
+        # ============================================================
+        # Method 5: L1 + L2 Norm Combination
+        # ============================================================
+        # epsilon = 0.1  # L2 weight (tune this)
+        # # L1: absolute value of mean (sparsity promoting)
+        # l1_score = torch.abs(W_metric.mean(axis=0))
+        # # L2: root mean square (emphasizes large values)
+        # l2_score = torch.sqrt((W_metric ** 2).mean(axis=0))
+        # return l1_score + epsilon * l2_score
+
+        # ============================================================
+        # Method 6: Trimmed Mean + SNR (original implementation)
+        # ============================================================
+        # trim_percent = 2
+        # sorted_W, _ = torch.sort(W_metric, dim=0)
+        # n_rows = W_metric.shape[0]
+        # trim_count = int(n_rows * trim_percent / 100)
+        # trimmed_W = sorted_W[trim_count:-trim_count, :]
+        # mean_scores = trimmed_W.mean(axis=0)
+        # std_scores = trimmed_W.std(axis=0)
+        # snr_scores = torch.abs(mean_scores) / (std_scores + 1e-8)
+        # return snr_scores
 
     class WeightScoreLogger:
         def __init__(self, save_dir="weight_scores"):
@@ -1363,7 +1421,7 @@ def Structured_AFR(args, model, tokenizer, device):
             # print(f"W_metric: {W_metric}")
             # W_metric = W_metric.mean(axis=0)  # 平均を取る
             logger.save_fo_layer_scores(i, W_metric)
-            W_metric = torch.abs(W_metric)
+            # W_metric = torch.abs(W_metric)
             W_metric = calculate_neuron_score_v2(W_metric)
             # print(f"W_metric after calculate_neuron_score_v4: {W_metric.shape}")
             # mlp_metric_list.append(W_metric.cpu())
@@ -1411,7 +1469,7 @@ def Structured_AFR(args, model, tokenizer, device):
             W_up = (rm_weights[i+32] * snip_grads[i+32]).t()
             W_gate = (rm_weights[i] * snip_grads[i]).t()
             W_metric = W_down + W_up + W_gate
-            W_metric = torch.abs(W_metric)
+            # W_metric = torch.abs(W_metric)
             # W_metric = W_metric.mean(axis=0)
             print(f"SNIP_W_metric {i} have NaN:", torch.isnan(W_metric).any().item())
             print(f"SNIP_W_metric {i} have inf:", torch.isinf(W_metric).any().item())
